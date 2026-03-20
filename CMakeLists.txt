@@ -3,4 +3,4 @@ project(proyecto)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(proyecto main.cpp sorting.cpp avl.cpp utils.cpp)
+add_executable(proyecto main.cpp quicksort.cpp heapsort.cpp avl.cpp utils.cpp)

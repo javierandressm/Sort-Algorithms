@@ -1,6 +1,7 @@
 #include <chrono>
 #include <iostream>
-#include "sorting.hpp"
+#include "quicksort.hpp"
+#include "heapsort.hpp"
 #include "avl.hpp"
 #include "utils.hpp"
 
@@ -64,10 +65,10 @@ int main() {
     size_t memQ = estimateVectorMemory(quickData);
     size_t memH = estimateVectorMemory(heapData);
 
-    size_t bytesPerNode = sizeof(void*) * 3 + sizeof(int);
+    // Para AVL: estimacion basada en multiset (sizeof por nodo + strings)
+    size_t bytesPerNode = sizeof(void*) * 3 + sizeof(int) + sizeof(string);
     size_t avlNodesMem = avl.size() * bytesPerNode;
-    size_t avlStringsMem = estimateVectorMemory(dataset);
-    size_t memT = avlNodesMem + avlStringsMem;
+    size_t memT = avlNodesMem;
 
     cout << "===== RESULTADOS =====\n\n";
     cout << "QuickSort\n";
