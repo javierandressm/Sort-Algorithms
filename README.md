@@ -1,4 +1,4 @@
-# Sorting Algorithms Comparison By Javier Sierra and Leon 
+# Sorting Algorithms Comparison By Javier Sierra and Francis Leon 
 
 Programa en C++ que compara el rendimiento de tres algoritmos de ordenamiento diferentes aplicados a un dataset de 100,000 palabras.
 
