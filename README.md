@@ -121,7 +121,8 @@ El programa verifica automáticamente que:
 - La memoria es una estimación basada en sizeof y cantidad de elementos
 
 ## 👤 Autor
-
+Javier Sierra
+Francis Leon 
 Desarrollado para la materia ST0245 - Estructuras de Datos y Algoritmos
 
 ## 📚 Referencias
