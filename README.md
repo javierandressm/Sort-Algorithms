@@ -15,10 +15,11 @@ Este proyecto implementa y compara tres estrategias diferentes para ordenar un c
 ```
 proyecto/
 ├── main.cpp              # Programa principal
-├── dataset.txt           # Dataset con 100,000 palabras (no incluido)
+├── dataset.txt           # Dataset con 100,000 palabras aleatorias
 ├── CMakeLists.txt        # Configuración de CMake
 │
-├── sorting.hpp/.cpp      # QuickSort y HeapSort
+├── quicksort.hpp/.cpp    # Implementación de QuickSort
+├── heapsort.hpp/.cpp     # Implementación de HeapSort
 ├── avl.hpp/.cpp          # Implementación del AVL Tree
 ├── utils.hpp/.cpp        # Funciones utilitarias
 └── README.md             # Este archivo
@@ -116,7 +117,7 @@ El programa verifica automáticamente que:
 ## 📌 Notas Importantes
 
 - No se usa `std::sort()` en QuickSort (implementado desde cero)
-- AVL usa `std::multiset` para garantizar balanceo automático
+- El AVL Tree está implementado completamente desde cero con rotaciones (no usa `std::multiset`)
 - Los tiempos se miden con `std::chrono::high_resolution_clock`
 - La memoria es una estimación basada en sizeof y cantidad de elementos
 
