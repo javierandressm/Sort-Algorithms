@@ -10,7 +10,6 @@ using namespace std;
 int main() {
     string filename = "dataset.txt";
 
-    cout << "Leyendo dataset...\n";
     vector<string> dataset = readDataset(filename);
 
     if (dataset.empty()) {
@@ -18,43 +17,29 @@ int main() {
         return 1;
     }
 
-    cout << "OK - Palabras leidas: " << dataset.size() << "\n\n";
-
     // QuickSort
-    cout << "Ejecutando QuickSort...\n";
     vector<string> quickData = dataset;
     auto startQ = chrono::high_resolution_clock::now();
     quickSort(quickData, 0, (int)quickData.size() - 1);
     auto endQ = chrono::high_resolution_clock::now();
     auto timeQ = chrono::duration_cast<chrono::milliseconds>(endQ - startQ).count();
-    cout << "OK\n";
 
     // HeapSort
-    cout << "Ejecutando HeapSort...\n";
     vector<string> heapData = dataset;
     auto startH = chrono::high_resolution_clock::now();
     heapSort(heapData);
     auto endH = chrono::high_resolution_clock::now();
     auto timeH = chrono::duration_cast<chrono::milliseconds>(endH - startH).count();
-    cout << "OK\n";
 
     // AVL
-    cout << "Ejecutando AVL Tree...\n";
     AVLTree avl;
     auto startT = chrono::high_resolution_clock::now();
-    int insertCount = 0;
     for (const auto& w : dataset) {
         avl.insert(w);
-        insertCount++;
-        if (insertCount % 50000 == 0) {
-            cout << "  Insertados: " << insertCount << " / " << dataset.size() << "\n";
-        }
     }
-    cout << "  Realizando inorder traversal...\n";
     vector<string> treeData = avl.inorder();
     auto endT = chrono::high_resolution_clock::now();
     auto timeT = chrono::duration_cast<chrono::milliseconds>(endT - startT).count();
-    cout << "OK\n\n";
 
     // Verificacion
     bool okQ = isSorted(quickData);

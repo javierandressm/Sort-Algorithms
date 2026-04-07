@@ -17,10 +17,7 @@ vector<string> readDataset(const string& filename) {
 
     for (const auto& path : paths) {
         file.open(path);
-        if (file.is_open()) {
-            cout << "Archivo encontrado en: " << path << "\n";
-            break;
-        }
+        if (file.is_open()) break;
     }
 
     if (!file.is_open()) {
